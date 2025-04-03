@@ -1,0 +1,199 @@
+
+.label 
+{
+  font-family: 'Lalezar';
+  color : #E26A2C;
+  font-weight : normal;
+  font-size : 20px;
+
+}
+.label1
+{
+  font-family: 'Lalezar';
+  color : #000000;
+  font-weight : normal;
+
+}
+.thanhtoanform {
+  width: 100%;
+  background-color :#ffffff;
+  margin-top : 80px;
+}
+
+.giohang_content {
+  width: 48%;
+  float: left;
+  margin-right: 2%;
+  background-color :rgb(255, 255, 255);
+}
+
+.thongtin
+{
+width: 48%;
+float: left;
+padding: 20px;
+background-color :rgb(255, 255, 255);
+}
+.giohang_content {
+  margin-right: 0;
+}
+
+.inputform, .inputdeli, .inputdeliform select, .inputdeliform textarea {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family : 'Lalezar';
+  height : 30px;
+}
+.inputdeli
+{
+  width : 605px;
+}
+
+
+.buttonguideli, .buttonxem button {
+  background-color: #2480ED;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.deliform, .formdeli2 {
+  width: 100%;
+  float: left;
+}
+
+
+
+.tb_noidung {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #000000;
+}
+
+.tb_noidung td {
+  padding: 10px;
+}
+
+
+
+.buttonguideli, .buttonxem button {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+
+.buttonxem {
+  margin-bottom : 10px;
+  display : flex; 
+  justify-content: center;
+  clear : both;
+
+}
+.confirmation-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.confirmation-container h1 {
+  color: #E26A2C;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+.confirmation-container p {
+  color: #000000;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.confirmation-container .order-details {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.confirmation-container .order-details h2 {
+  color: #E26A2C;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.confirmation-container .order-details p {
+  color: #000000;
+  font-size: 16px;
+  margin: 5px 0;
+}
+.confirmation-container .back-to-home,
+.confirmation-container .track-order {
+  background-color: #2480ED;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 5px;
+}
+/* Popup CSS */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+}
+.modal-content h2 {
+  color: #E26A2C;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.modal-content button {
+  background-color: #2480ED;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px 5px;
+}
+
+.close {
+  color: #cd0000;
+  margin-left : 20px; 
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}

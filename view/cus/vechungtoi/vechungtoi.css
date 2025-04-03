@@ -1,0 +1,144 @@
+#container 
+{
+    
+    background-color: #252525;
+}
+
+.font-family 
+{
+    font-family: 'Lalezar' ;
+}
+.icon
+{
+    width: 200px;
+    height: 200px;
+}
+#intro {
+    width: 100%;
+    text-align: center;
+    position: relative; /* Thêm thuộc tính này để tạo vị trí tương đối */
+    height: 300px;
+}
+
+#intro h1 {
+    font-size: 60px;
+    margin-bottom: 0px;
+    /* padding-top: 10px; */
+    position: absolute; /* Thêm thuộc tính này để tạo vị trí tuyệt đối */
+    top: 50%; /* Di chuyển tiêu đề đến giữa theo chiều dọc */
+    left: 50%; /* Di chuyển tiêu đề đến giữa theo chiều ngang */
+    transform: translate(-50%, -120%); /* Dịch chuyển tiêu đề để nằm ở chính giữa */
+    z-index: 1; /* Đảm bảo tiêu đề hiển thị trên ảnh */
+    color: white;
+}
+
+#intro img:first-child {
+    height: 300px;
+    width: 100%;
+}
+
+#backgroundHeader {
+    position: relative; /* Thêm thuộc tính này để tạo vị trí tương đối */
+    z-index: 0; /* Đảm bảo logo hiển thị dưới nền */
+
+}
+
+#logoTong {
+    position: absolute; /* Thêm thuộc tính này để tạo vị trí tuyệt đối */
+    top: 50%; /* Di chuyển logo đến giữa theo chiều dọc */
+    left: 50%; /* Di chuyển logo đến giữa theo chiều ngang */
+    transform: translate(-50%, 0%); /* Dịch chuyển logo để nằm ở chính giữa */
+    z-index: 0; /* Đảm bảo logo hiển thị dưới nền */
+    width: 30%;
+    height: auto;
+}
+
+
+#giatri img {
+    /* max-height: 78.6vh; */
+    height: 500px;
+    width: 100%;
+     /* Ensure it doesn't exceed the viewport height */
+    padding: 0px;
+}
+#hinhBurger
+{
+    width: 600px;
+    height: 600px;
+    border-radius:  7px;
+    margin-right : 60px;
+    margin-bottom : 30px;
+    box-shadow:15px 15px 15px black;
+
+}
+
+
+
+
+#logoNho
+{
+    width :auto;
+    height:auto;
+    border-radius: 10px;
+    box-shadow:15px 15px 15px black
+
+}
+
+#gioithieu 
+{
+    padding:30px 0px;
+}
+
+#gioithieu table 
+{
+    padding-left: 35px;
+}
+#gioithieu table tr td:first-child
+{
+    height: 500px;
+    margin-left: 100px;
+}
+
+
+h2
+{
+    font-size:4em;
+    color: #FFCB00;
+}
+
+#tieuSu
+{
+
+font-size: 2em;
+color: white;
+margin: 0px 50px;
+
+}
+
+#suMenhTamNhin
+{
+    padding-left :50px;
+    padding-right:100px;
+}
+
+#suMenhTamNhin h2:nth-of-type(2)
+{
+    padding-top : 80px;
+}
+
+#suMenhTamNhin h2 
+{
+    margin:0px;
+}
+#suMenhTamNhin p 
+{
+    margin:0px;
+    color :white;
+
+    font-size: 30px;
+}
+
+#tamNhinSuMenhContainer
+{
+    padding: 4% 0px ;
+}

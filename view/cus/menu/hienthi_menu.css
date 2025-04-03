@@ -1,0 +1,285 @@
+#all{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+.content{
+    flex: 1;
+}
+.sidebar_menu {
+    width: 200px;
+    background-image: linear-gradient(to right, #1a1a1a 0%, black 100%);
+    position: sticky;
+    top: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.sidebar_menu hr {
+    width: 80%; 
+    background-color: #f3e9dec0;
+    height: 0.3px; 
+    border: none; 
+    margin: 0 auto; 
+    margin-top: auto; 
+    margin-bottom: auto; 
+    margin-left: 10px;
+}
+.menu_categories {
+    width: 200px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+.fixed_menu {
+    position: fixed;
+}
+.initial_menu {
+    position: initial;
+}
+
+.menu_categories.scrolled {
+    position: initial;
+} 
+
+.menu_categories a {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    color: #F6E7D8;
+    font-family: 'Lalezar';
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.menu_categories a:hover {
+color: #FFA629;
+}
+  
+
+.title_chitiet,.title_thucdon{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #FFCB00;
+    font-family: 'Lalezar';
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+.title_chitiet1,.title_thucdon1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #FFCB00;
+    font-family: 'Lalezar';
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+.Thucdon_mon {
+    background-color: rgba(16, 16, 16, 0.3);
+    border: 0.5px solid #F6E7D8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng */
+}
+.food-item{
+    justify-content: center;
+    align-content: center;
+    padding-left: 55px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    overflow: hidden;
+}
+.Ten_mon{
+    color: #fd9a29;
+    font-weight: bold;
+    font-size: 18px;
+}
+.label {
+    color: #ffff;
+    font-weight: bold;
+}
+.price {
+    color: #fd9a29;
+    font-weight: bold;
+}
+.btn_xemchitiet{
+    background-image: linear-gradient(45deg, #f12711, #e89f00);
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 23px;
+    color: #ffff;
+    font-family: 'Lalezar';
+    font-size: 16px;
+  }
+  .btn_xemchitiet:hover:not(.active) {
+    background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
+    transition: background-color 0.3s ease;
+  }
+.anh{
+    display: block;
+    max-width: fit-content;
+    justify-content: center;
+    text-align: center;
+}
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+}
+
+.btn_dathang{
+    color: #fff;
+    background-color: #e31837;
+    border-color: #e31837;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height:25px;
+    color: #F6E7D8;
+    font-family: 'Lalezar';
+    font-size: 16px;
+}
+.btn_dathang:hover:not(.active) {
+    background-color: #b80520;
+    transition: background-color 0.3s ease;
+  }
+#amount {
+    width: 30px;
+    text-align: center;
+    background-color: #2480ED;
+    border-left: 0.5px solid #F6E7D8; /* Increase border thickness */
+    border-right: 0.5px solid #F6E7D8; /* Increase border thickness */
+    border-top: none;
+    border-bottom: none;
+    color: #F6E7D8;
+}
+
+#buy-amount{
+    padding-right: 20px;
+}
+.button-quantity-container {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.btn_amount{
+    margin-right: 0; 
+    background-color:  #2480ED;
+    border:none;
+    width:40px; 
+    height:25px;
+    border-radius: 0 5px 5px 0;
+    color: #F6E7D8;
+}
+.btn_amount:hover:not(.active) {
+    background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
+    transition: background-color 0.3s ease;
+  }
+
+.list {
+    list-style: none;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.list li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.list li a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #f12711, #f5af19);
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffff;
+    font-family: Lalezar;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.list li a a#active {
+    color: #a20b0b;
+}
+
+.list li a:hover:not(#active) {
+    color: #910303;
+}
+.title_datngaynao{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #FFCB00;
+    font-family: 'Lalezar';
+    text-transform: uppercase;
+}
+.other_food {
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.Thucdon{
+    background:none; 
+    border: 0.5px solid #F6E7D8;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: inline-block;
+    max-width: fit-content;
+    padding: 15px;
+    margin: 20px;
+}
+.descr{
+    width:90%; 
+    font-size:18px;
+    padding-bottom: 10px;
+    color: #000;
+}
+.Thucdon_mon2{
+    border-radius: 20px;
+    border: 0.5px solid #F6E7D8;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    width : 200px;
+    height : 300px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+}
+.datnaynao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.onediscount {
+    display: flex;
+    justify-content: center;
+}
+.noidung_chitiet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-top: 10px;
+}
