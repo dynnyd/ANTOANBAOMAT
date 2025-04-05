@@ -1,9 +1,16 @@
 #container {
   background-color: #252525;
   text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-
+a.font-family {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
 .font-family {
   font-family: "Lalezar", sans-serif;
 }
@@ -22,6 +29,7 @@
   cursor: pointer;
   font-size: 20px;
   margin-right: 10px;
+  margin-top: 10px;
   padding: 5px 10px;
 } 
 
