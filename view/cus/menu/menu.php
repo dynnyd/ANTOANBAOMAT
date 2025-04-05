@@ -45,11 +45,11 @@
                     $i++;
             ?>
             <li class="Thucdon_mon">  
-                <img src="../../admin/ql_sanpham/uploads/<?php echo $row['img'] ?>" style="width: 150px; height: 150px; margin-bottom: 10px;">
+                <img src="../view/admin/ql_sanpham/uploads/<?php echo $row['img']; ?>" style="width: 150px; height: 150px; margin-bottom: 10px;">
                 <span class="Ten_mon" style="margin-bottom: 10px;"><?php echo $row['food_name'] ?></span>
                 <div style="margin-bottom: 10px;">
                     <span class="label">Giá bán:</span> 
-                    <span class="price"><?php echo number_format($row['selling_price'],0,',','.').'vnđ' ?></span>
+                    <span class="price"><?php echo number_format($row['selling_price'],0,',','.').' vnđ' ?></span>
                 </div>
                 <button class="btn_xemchitiet"style="margin-bottom: 5px;">
                     <a href="hienthi_menu.php?quanly=chitiet_sp&id=<?php echo $row['food_id']?>" style="text-decoration: none; color: #ffff;">Xem chi tiết</a>

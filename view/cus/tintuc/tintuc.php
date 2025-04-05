@@ -54,7 +54,8 @@ if (!$query_tinTucBenPhai) {
             <?php while ($row = mysqli_fetch_array($query_tinTucBenTrai)) { ?>
               <div id="box">
                 <a style="width:90%" href="tranghienthi.php?quanly=tintuc&id=<?= $row['tintuc_id'] ?>">
-                  <img class="main-image" src="../view/admin/ql_tintuc/<?= $row['img_title'] ?>">
+                  <img class="main-image" src="../view/admin/ql_tintuc/uploads/<?php echo $row['img_title'] ?>">
+                  <!-- <img src="ql_tintuc/<?php echo $row['img_title'] ?> -->
                 </a>
                 <br>
                 <div class="text-container">

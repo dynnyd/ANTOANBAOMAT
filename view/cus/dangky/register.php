@@ -50,11 +50,11 @@
         
         <script src="../view/cus/dangnhap/hienthi_mk.js"></script>
         
-        <div class="box-content" >
+        <div class="box-content"  >
             <img class="img" src="../view/cus/img/anhDK.png">
             <div class="form">
-                <h2 class="dangky">ĐĂNG KÝ</h2>
-                <form class="bang-dk"  method="Post">                
+                <h2 class="dangky" style="font-family: 'Lalezar'; padding-left: 25px;">ĐĂNG KÝ</h2>
+                <form class="bang-dk"  method="Post" style="font-family: 'Lalezar';">                
                         <!-- //name -->
                     <div class="name">
                         <label class="title" >Họ và tên</label>
@@ -94,7 +94,7 @@
                             <label class="title" >Mật khẩu*</label>
                             <br><input type="password" id="password" name="password">
                         </div>
-                        <span class="icon" id="nosee" style="cursor: pointer;" onclick="showpass()" ><i class="fas fa-eye-slash" ></i></span>
+                        <span class="icon" id="nosee" style="cursor: pointer;padding:5px" onclick="showpass()" ><i class="fas fa-eye-slash" ></i></span>
                     </div>
                                 
                     <div class="has-error">
@@ -107,7 +107,7 @@
                             <label class="title" >Nhập lại mật khẩu*</label>
                             <br><input type="password" id="re_enter_password" name="re_enter_password">
                         </div>
-                        <span class="icon" id="noseeRe" style="cursor: pointer;" onclick="showRepass()"><i class="fas fa-eye-slash" ></i></span>
+                        <span class="icon" id="noseeRe" style="cursor: pointer; padding:5px" onclick="showRepass()"><i class="fas fa-eye-slash" ></i></span>
                     </div>
 
                     <div class="has-error">
@@ -115,7 +115,7 @@
                     </div> 
                             
                         <!-- dangky button -->
-                    <input class="dk-bt" type="submit" id="dangky" name="dangky" value="Đăng ký">
+                    <input style="font-family: 'Lalezar'; margin-bottom: 25px;" class="dk-bt" type="submit" id="dangky" name="dangky" value="Đăng ký">
                     <?php
                         if(isset($errors))
                         {

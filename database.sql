@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 03, 2025 at 05:10 PM
+-- Generation Time: Apr 05, 2025 at 11:18 AM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `bigdeal_service`;
 CREATE TABLE IF NOT EXISTS `bigdeal_service` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `food_id` int DEFAULT NULL,
   `quantity` int DEFAULT NULL,
   `first_name` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -113,7 +113,7 @@ INSERT INTO `category` (`cate_id`, `cate_name`) VALUES
 (2, 'Burger'),
 (3, 'Combo tiết kiệm'),
 (4, 'Đồ ăn kèm'),
-(5, 'Nước giải khát');
+(5, 'Tráng miệng');
 
 -- --------------------------------------------------------
 
@@ -161,18 +161,19 @@ CREATE TABLE IF NOT EXISTS `discount` (
 
 DROP TABLE IF EXISTS `discount_news`;
 CREATE TABLE IF NOT EXISTS `discount_news` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `discount_name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `description` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
-  `img` varchar(100) COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `img` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `discount_news`
 --
 
 INSERT INTO `discount_news` (`id`, `discount_name`, `description`, `img`) VALUES
-(1, 'GIẢM 15% CHO BURGER BÒ', '<p><strong>Từ ngày 19 tháng 5 năm 2024, cửa hàng GOURMEZ đang có chương trình khuyến mãi đặc biệt dành cho món burger bò. Khách hàng sẽ được hưởng giảm giá 15% khi mua burger bò tại cửa hàng.&nbsp;</strong></p><p>Món burger bò tại GOURMEZ được chế biến từ thịt bò tươi ngon, được gia vị và nấu nướng cẩn thận để mang đến hương vị thơm ngon và độ tươi ngọt của thịt. Burger được phục vụ kèm các loại rau, phô mai và các phụ gia khác để tạo nên một món ăn hoàn chỉnh và cân bằng. Với mức giảm giá 15%, khách hàng có thể thưởng thức trọn vẹn hương vị burger bò chất lượng cao tại GOURMEZ với mức giá hấp dẫn hơn. Đây là cơ hội tuyệt vời để thưởng thức món ăn yêu thích với giá ưu đãi.&nbsp;</p><p>Chương trình khuyến mãi này áp dụng cho các ngày trong tuần và không áp dụng đồng thời với các chương trình khuyến mãi khác. Vì số lượng có hạn, khách hàng nên đến sớm để đảm bảo có cơ hội thưởng thức món ăn này với giá khuyến mãi.</p>', 'ql_khuyenmai/uploads/'),
+(1, 'GIẢM 15% CHO BURGER BÒ', '<p><strong>Từ ngày 19 tháng 5 năm 2024, cửa hàng GOURMEZ đang có chương trình khuyến mãi đặc biệt dành cho món burger bò. Khách hàng sẽ được hưởng giảm giá 15% khi mua burger bò tại cửa hàng.&nbsp;</strong></p><p>Món burger bò tại GOURMEZ được chế biến từ thịt bò tươi ngon, được gia vị và nấu nướng cẩn thận để mang đến hương vị thơm ngon và độ tươi ngọt của thịt. Burger được phục vụ kèm các loại rau, phô mai và các phụ gia khác để tạo nên một món ăn hoàn chỉnh và cân bằng. Với mức giảm giá 15%, khách hàng có thể thưởng thức trọn vẹn hương vị burger bò chất lượng cao tại GOURMEZ với mức giá hấp dẫn hơn. Đây là cơ hội tuyệt vời để thưởng thức món ăn yêu thích với giá ưu đãi.&nbsp;</p><p>Chương trình khuyến mãi này áp dụng cho các ngày trong tuần và không áp dụng đồng thời với các chương trình khuyến mãi khác. Vì số lượng có hạn, khách hàng nên đến sớm để đảm bảo có cơ hội thưởng thức món ăn này với giá khuyến mãi.</p>', 'ql_khuyenmai/uploads/burgertom.png'),
 (2, 'TẶNG SALAD RAU CỦ CHO HÓA ĐƠN TRÊN 99K', ' Khi quý khách mua bất kỳ combo ăn nào với tổng giá trị 99.000 đồng trở lên, bạn sẽ được tặng ngay 1 salad rau củ miễn phí.\r\n\r\nSalad rau củ được chế biến từ các loại rau tươi, sạch, giàu vitamin và khoáng chất. Món salad này sẽ giúp bữa ăn của quý khách thêm phần cân bằng dinh dưỡng và tăng cường sức khỏe. Với hương vị thanh mát, salad rau củ sẽ là sự kết hợp hoàn hảo cùng các món chính trong combo.\r\n\r\nChương trình khuyến mãi này áp dụng cho cả khách hàng đến trực tiếp tại cửa hàng và khách hàng đặt món ăn để mang về. Chỉ cần thanh toán đơn hàng từ 99.000 đồng trở lên, quý khách sẽ được tặng ngay 1 salad rau củ miễn phí.\r\n\r\nĐừng bỏ lỡ cơ hội thưởng thức bữa ăn ngon miệng cùng món salad bổ dưỡng với mức giá ưu đãi này. Hãy đến ngay cửa hàng hoặc đặt hàng online để nhận ưu đãi hấp dẫn!', 'ql_khuyenmai/uploads/Giảm giá (7).png'),
 (3, 'GÀ GIÒN TẶNG KÈM COMBO HẠNH PHÚC', '<p>Từ ngày <strong>19/5 - 31/5/2024</strong>, khi quý khách mua bất kỳ combo \"Hạnh Phúc\" nào tại cửa hàng hoặc đặt hàng giao tận nơi, sẽ được tặng kèm 1 miếng gà giòn hoàn toàn miễn phí.</p><p>&nbsp;Combo \"Hạnh Phúc\" bao gồm các món ăn đặc trưng của chúng tôi như burger, khoai tây chiên và nước uống. Đây là sự kết hợp hoàn hảo để tạo nên một bữa ăn đầy đủ dinh dưỡng và hấp dẫn về hương vị. Món gà giòn tặng kèm được chế biến từ thịt gà tươi ngon, được ướp gia vị và chiên giòn giòn. Kết hợp cùng combo \"Hạnh Phúc\", món gà giòn sẽ là sự bổ sung hoàn hảo, mang đến cho quý khách một bữa ăn đầy đủ dinh dưỡng và hương vị tuyệt vời. Chương trình khuyến mãi này áp dụng cho cả khách hàng đến trực tiếp tại cửa hàng và khách hàng đặt món ăn để giao tận nơi. Chỉ cần thanh toán combo \"Hạnh Phúc\", quý khách sẽ được tặng ngay 1 miếng gà giòn miễn phí.&nbsp;</p><p>Đừng bỏ lỡ cơ hội thưởng thức bữa ăn ngon miệng cùng món gà giòn bổ dưỡng với mức giá ưu đãi này. Hãy đến ngay cửa hàng hoặc đặt hàng online ', 'ql_khuyenmai/uploads/Giảm giá (8).png'),
 (4, 'GIẢM 40% KHI MUA 5 MIẾNG GÀ SỐT MẮM TỎI', '<p>Từ ngày 1/6, cửa hàng đang áp dụng chương trình khuyến mãi hấp dẫn cho sản phẩm Miếng gà sốt mắm tỏi. Với mức giảm giá lên tới 40%, khách hàng sẽ được hưởng ưu đãi khi mua tối thiểu 5 miếng gà cùng với đi NHÓM 4 người trở lên. Cụ thể, khi mua 5 miếng gà sốt mắm tỏi, khách hàng sẽ được giảm 40% trên tổng giá trị đơn hàng. Ưu đãi này không thể kết hợp với các chương trình khuyến mãi khác đang diễn ra tại cửa hàng. Chương trình ưu đãi này có thời gian áp dụng từ ngày 1/6, tuy nhiên thời điểm kết thúc chưa được xác định. Khách hàng vui lòng liên hệ trực tiếp với cửa hàng để nắm bắt thông tin chi tiết và điều kiện áp dụng của chương trình khuyến mãi này.</p>', 'ql_khuyenmai/uploads/Giảm giá (10).png'),
@@ -203,28 +204,29 @@ CREATE TABLE IF NOT EXISTS `food` (
 --
 
 INSERT INTO `food` (`food_id`, `cate_id`, `food_name`, `original_price`, `selling_price`, `small_descr`, `trending`, `img`, `created_at`) VALUES
-(1, 1, 'Gà sốt 8 vị cay', 119000, 119000, 'Gà sốt 8 vị cay “đốn tym” bạn bởi hương vị cay có 1-0-2, đó chính là nước sốt đặc biệt với sự hoà quyện của 8 loại ớt, tiêu lừng danh trên thế giới sánh quyện trên từng miếng gà giòn tươi.', NULL, '1715175115_Gacay8vi.1.jpg', '2025-03-25 08:33:20'),
-(2, 1, 'Miếng gà giòn', 35000, 35000, 'Gà tươi được chiên giòn vàng, bên trong thịt mềm mại và ngọt ngào, tạo nên một trải nghiệm ẩm thực đậm đà và hấp dẫn.\r\n', NULL, '1715175206_kfc-fried-chicken-62e0ca.jpg', '2025-03-25 08:33:20'),
-(3, 1, 'Cơm gà giòn', 45000, 45000, 'Cơm gà giòn là một sự kết hợp hoàn hảo giữa cơm trắng thơm ngon và miếng gà giòn rụm, tạo nên một trải nghiệm ẩm thực độc đáo và hấp dẫn.\r\n', NULL, '1715175305_cơm gà giòn.jpg', '2025-03-25 08:33:20'),
-(4, 3, 'Combo 5 miếng gà ', 85000, 79000, 'Combo bao gồm 5 miếng gà không xương ăn kèm sốt mayonnaise và sốt tương ớt chua ngọt', NULL, '1715218746_Combo 5 miếng gà không xương.7.webp', '2025-03-25 08:33:20'),
-(5, 3, 'Combo B', 220000, 220000, 'Combo bao gồm: 2 Miếng gà sốt bơ tỏi và thảo mộc, 2 Miếng gà có xương (lựa chọn vị cay/ không cay), 1 Món ăn kèm cỡ vừa tùy chọn (Bắp cải trộn/ Khoai tây nghiền/ Khoai tây chiên),2 Nước ngọt.\r\n\r\n', NULL, '1715175916_Combo_Gasotbotoi.3.png', '2025-03-25 08:33:20'),
-(6, 3, 'Combo tiết kiệm', 65000, 65000, 'Combo bao gồm: 1 Bánh cuộn gà giòn không xương (lựa chọn vị cay/ không cay), 1 Khoai tây nghiền tiêu chuẩn, 1 Nước ngọt, 1 Tương ớt + 1 Tương cà.\r\n', NULL, '1715176014_Combo_Tietkiem.4.png', '2025-03-25 08:33:20'),
-(7, 3, 'Combo hạnh phúc', 100000, 100000, 'Combo bao gồm 2 miếng gà giòn + 1 ly pepsi vừa + 1 phần khoai tây vừa + 1 bánh su kem.\r\n', NULL, '1715176289_Rectangle 57.png', '2025-03-25 08:33:20'),
-(8, 3, 'Combo buổi trưa tiện lợi', 78000, 78000, 'Combo bao gồm mỳ ý sốt bò bằm + 1 ly coca size M + 1 miếng gà giòn.\r\n', NULL, '1715176366_combo buổi trưa tiện lợi.jpg', '2025-03-25 08:33:20'),
-(9, 2, 'Burger Tex Supreme', 59000, 59000, 'Burger Tex Supreme ( lựa chọn vị cay/ không cay),1 Tương ớt + 1 Tương cà', NULL, '1715176587_BurgerTexSupreme.2.jpg', '2025-03-25 08:33:20'),
-(10, 2, 'Burger gà chiên giòn', 45000, 45000, 'Burger với nhân gà chiên giòn rụm, ăn cùng salad, cà chua, đẫm sốt mayonnaise.\r\n', NULL, '1715176643_Burger Gà Chiên Giòn.6.webp', '2025-03-25 08:33:20'),
-(11, 2, 'Burger tôm', 40000, 40000, 'Tôm tươi và giòn được chất lượng bọc trong chiếc bánh mì mềm mại, tạo nên một trải nghiệm ẩm thực đơn giản nhưng hấp dẫn.', NULL, '1715176698_Rectangle 45.png', '2025-03-25 08:33:20'),
-(12, 2, 'Burger bò', 45000, 45000, 'Một chiếc burger bò được tạo nên từ các thành phần chính như bánh mì burger, thịt bò xay, rau sống và các loại gia vị, tạo nên một hòa quyện hương vị độc đáo.', NULL, '1715180294_burger bò.jpg', '2025-03-25 08:33:20'),
-(13, 4, 'Mỳ ý sốt bò bằm', 45000, 45000, 'Mì ý sốt bò bằm thơm lừng được phủ bởi phô mai mozzarella.\r\n', NULL, '1715180342_Mì ý sốt bò bằm.8.webp', '2025-03-25 08:33:20'),
-(14, 4, 'Khoai tây chiên Cajun', 35000, 29000, 'Khoai tây chiên giòn ăn cùng với gia vị Cajun thơm lừng.\r\n\r\n', NULL, '1715180425_Khoai tây chiên Cajun.5.png', '2025-03-25 08:33:20'),
-(15, 4, 'Hotdog YumYum', 35000, 35000, 'Một thanh hotdog nóng hổi, bên trong có xúc xích thơm phức và mềm mại, được bọc trong lớp bánh mì mềm và mịn, cùng với các loại gia vị và sốt đặc trưng, tạo nên một trải nghiệm ẩm thực đơn giản nhưng vô cùng ngon miệng.\r\n', NULL, '1715180528_Rectangle 55.png', '2025-03-25 08:33:20'),
-(16, 4, 'Khoai tây lắc BBQ', 25000, 25000, 'Món ăn là sự kết hợp hoàn hảo giữa lớp vỏ giòn giòn của khoai tây, được thấm đầy vị BBQ đậm đà và hấp dẫn. Mỗi miếng khoai tây khiến bạn cảm nhận được sự hòa quyện giữa vị ngọt, cay và hương thơm của gia vị BBQ, tạo nên một trải nghiệm ăn vặt độc đáo và t', NULL, '1715180587_khoai tây lắc bbq.jpg', '2025-03-25 08:33:20'),
-(17, 4, 'Bánh xoài đào', 10000, 10000, 'Bánh được làm từ mousse xoài và đào, được bao bọc trong lớp bánh mousse nhẹ và mịn. Khi ăn sẽ cho cảm giác chua ngọt đầy hấp dẫn và thơm ngon.\r\n', NULL, '1715180658_bánh xoài đào.jpeg', '2025-03-25 08:33:20'),
-(18, 4, 'Bánh tart trứng', 17000, 17000, 'Vỏ bánh tartlà một  lớp bánh mì ngọt, giòn mỏng và có cấu trúc hạt như vỏ bánh quy. Vỏ bánh này thường được làm từ bột mỳ, bơ, đường và một chút muối, tạo nên một hỗn hợp mềm mịn. ', NULL, '1715180783_banh-tart-trung.jpg', '2025-03-25 08:33:20'),
-(19, 4, 'Salad rau củ', 37000, 37000, 'Món ăn bao gồm rau xà lách, dưa leo, cà chia, hành tím,ớt chuông, sốt mè rang, sốt mayonnaise.', NULL, '1715180852_Salad.jpg', '2025-03-25 08:33:20'),
-(20, 5, 'Milo', 10000, 10000, 'Sản phẩm có hương vị thơm ngon và giàu dinh dưỡng với sự hòa quyện của cacao, sữa và lúa mạch.', NULL, '1715347844_Milo.jpg.webp', '2025-03-25 08:33:20'),
-(21, 5, 'Pepsi', 10000, 10000, 'Sản phẩm từ thương hiệu nước ngọt Pepsi nổi tiếng toàn cầu với mùi vị thơm ngon với hỗn hợp hương tự nhiên cùng chất tạo ngọt tổng hợp, giúp xua tan cơn khát và cảm giác mệt mỏi.', NULL, '1715348048_Pepsi.jpg', '2025-03-25 08:33:20'),
-(22, 1, 'Gà mắm tỏi', 35000, 35000, '<ul><li>Món gà mắm tỏi là sự kết hợp tinh tế giữa vị ngọt, thơm của gà và hương vị đậm đà của mắm tỏi.&nbsp;</li><li>Mắm tỏi, với hương vị đặc trưng của tỏi và hòa quyện với vị ngọt tự nhiên của gà, tạo ra một hòa quyện vị giác đặc biệt.</li></ul>', NULL, '1715501482_Gà mắm tỏi (1).png', '2025-03-25 08:33:20');
+(0, 5, 'Trà sữa', 30000, 25000, '<p>Sự kết hợp hoàn hảo của sữa và trà làm tăng hương vị thức uống</p>', NULL, '1717247340_7.png', '2025-04-05 05:52:39'),
+(1, 1, 'Gà sốt 8 vị cay', 119000, 119000, 'Gà sốt 8 vị cay “đốn tym” bạn bởi hương vị cay có 1-0-2, đó chính là nước sốt đặc biệt với sự hoà quyện của 8 loại ớt, tiêu lừng danh trên thế giới sánh quyện trên từng miếng gà giòn tươi.', NULL, '1717656833_1716792114_spicy chicken!.png', '2025-04-05 05:53:05'),
+(2, 1, 'Miếng gà giòn', 35000, 35000, 'Gà tươi được chiên giòn vàng, bên trong thịt mềm mại và ngọt ngào, tạo nên một trải nghiệm ẩm thực đậm đà và hấp dẫn.\r\n', NULL, '1717656813_gagion.png', '2025-04-05 05:57:54'),
+(3, 1, 'Cơm gà giòn', 45000, 45000, 'Cơm gà giòn là một sự kết hợp hoàn hảo giữa cơm trắng thơm ngon và miếng gà giòn rụm, tạo nên một trải nghiệm ẩm thực độc đáo và hấp dẫn.\r\n', NULL, '1716791062_cơm gà.png', '2025-04-05 05:59:01'),
+(4, 3, 'Combo 5 miếng gà ', 85000, 79000, 'Combo bao gồm 5 miếng gà không xương ăn kèm sốt mayonnaise và sốt tương ớt chua ngọt', NULL, '1716793697_gakhongxuong.png', '2025-04-05 05:40:11'),
+(5, 3, 'Combo B', 220000, 220000, 'Combo bao gồm: 2 Miếng gà sốt bơ tỏi và thảo mộc, 2 Miếng gà có xương (lựa chọn vị cay/ không cay), 1 Món ăn kèm cỡ vừa tùy chọn (Bắp cải trộn/ Khoai tây nghiền/ Khoai tây chiên),2 Nước ngọt.\n\n', NULL, '1716794525_combotietkiem.png', '2025-04-05 05:36:14'),
+(6, 3, 'Combo tiết kiệm', 65000, 65000, 'Combo bao gồm: 1 Bánh cuộn gà giòn không xương (lựa chọn vị cay/ không cay), 1 Khoai tây nghiền tiêu chuẩn, 1 Nước ngọt, 1 Tương ớt + 1 Tương cà.\r\n', NULL, '1717230445_combotietkiem (2).png', '2025-04-05 05:37:04'),
+(7, 3, 'Combo hạnh phúc', 100000, 100000, 'Combo bao gồm 2 miếng gà giòn + 1 ly pepsi vừa + 1 phần khoai tây vừa + 1 bánh su kem.\r\n', NULL, '1717230633_combohanhphuc.png', '2025-04-05 05:37:29'),
+(8, 5, 'Cacao', 15000, 78000, 'Sự kết hợp thơm ngon giữa sữa và cacao', NULL, '1716797918_CACAO.png', '2025-04-05 06:01:10'),
+(9, 2, 'Burger Tex Supreme', 59000, 59000, 'Burger Tex Supreme ( lựa chọn vị cay/ không cay),1 Tương ớt + 1 Tương cà', NULL, '1716777930_burgertx.png', '2025-04-05 05:32:50'),
+(10, 2, 'Burger gà chiên giòn', 45000, 45000, 'Burger với nhân gà chiên giòn rụm, ăn cùng salad, cà chua, đẫm sốt mayonnaise.\r\n', NULL, '1716777207_burgerga.png', '2025-04-05 05:33:51'),
+(11, 2, 'Burger tôm', 40000, 40000, 'Tôm tươi và giòn được chất lượng bọc trong chiếc bánh mì mềm mại, tạo nên một trải nghiệm ẩm thực đơn giản nhưng hấp dẫn.', NULL, '1716777715_burger tôm.png', '2025-04-05 05:31:40'),
+(12, 2, 'Burger bò', 45000, 45000, 'Một chiếc burger bò được tạo nên từ các thành phần chính như bánh mì burger, thịt bò xay, rau sống và các loại gia vị, tạo nên một hòa quyện hương vị độc đáo.', NULL, '1716771813_Burger bò.png', '2025-04-05 05:28:33'),
+(13, 4, 'Mỳ ý sốt bò bằm', 45000, 45000, 'Mì ý sốt bò bằm thơm lừng được phủ bởi phô mai mozzarella.\r\n', NULL, '1717230821_myy.png', '2025-04-05 05:38:22'),
+(14, 4, 'Khoai tây chiên Cajun', 35000, 29000, 'Khoai tây chiên giòn ăn cùng với gia vị Cajun thơm lừng.\r\n\r\n', NULL, '1716776885_khoaitaychien.png', '2025-04-05 05:41:48'),
+(15, 4, 'Hotdog YumYum', 35000, 35000, 'Một thanh hotdog nóng hổi, bên trong có xúc xích thơm phức và mềm mại, được bọc trong lớp bánh mì mềm và mịn, cùng với các loại gia vị và sốt đặc trưng, tạo nên một trải nghiệm ẩm thực đơn giản nhưng vô cùng ngon miệng.\r\n', NULL, '1716778545_hotdog.png', '2025-04-05 05:42:14'),
+(16, 4, 'Khoai tây lắc BBQ', 25000, 25000, 'Món ăn là sự kết hợp hoàn hảo giữa lớp vỏ giòn giòn của khoai tây, được thấm đầy vị BBQ đậm đà và hấp dẫn. Mỗi miếng khoai tây khiến bạn cảm nhận được sự hòa quyện giữa vị ngọt, cay và hương thơm của gia vị BBQ, tạo nên một trải nghiệm ăn vặt độc đáo và t', NULL, '1716779030_khoaitaylac.png', '2025-04-05 05:42:39'),
+(17, 4, 'Bánh xoài đào', 10000, 10000, 'Bánh được làm từ mousse xoài và đào, được bao bọc trong lớp bánh mousse nhẹ và mịn. Khi ăn sẽ cho cảm giác chua ngọt đầy hấp dẫn và thơm ngon.\r\n', NULL, '1716796807_bãnhoaidao.png', '2025-04-05 05:43:20'),
+(18, 4, 'Bánh tart trứng', 17000, 17000, 'Vỏ bánh tartlà một  lớp bánh mì ngọt, giòn mỏng và có cấu trúc hạt như vỏ bánh quy. Vỏ bánh này thường được làm từ bột mỳ, bơ, đường và một chút muối, tạo nên một hỗn hợp mềm mịn. ', NULL, '1716796997_banhtart.png', '2025-04-05 05:43:34'),
+(19, 4, 'Salad rau củ', 37000, 37000, 'Món ăn bao gồm rau xà lách, dưa leo, cà chia, hành tím,ớt chuông, sốt mè rang, sốt mayonnaise.', NULL, '1716797183_salad.png', '2025-04-05 05:43:45'),
+(20, 5, 'Kem Matcha', 10000, 10000, 'Sản phẩm có hương vị thơm ngon và giàu dinh dưỡng với sự hòa quyện của sữa và matcha', NULL, '1717246655_2.png', '2025-04-05 05:47:34'),
+(21, 5, 'Kem Dâu', 10000, 10000, 'Sản phẩm có hương vị thơm ngon và giàu dinh dưỡng với sự hòa quyện của sữa và dâu tươi', NULL, '1717246725_3.png', '2025-04-05 05:48:17'),
+(22, 1, 'Gà mắm tỏi', 35000, 35000, '<ul><li>Món gà mắm tỏi là sự kết hợp tinh tế giữa vị ngọt, thơm của gà và hương vị đậm đà của mắm tỏi.&nbsp;</li><li>Mắm tỏi, với hương vị đặc trưng của tỏi và hòa quyện với vị ngọt tự nhiên của gà, tạo ra một hòa quyện vị giác đặc biệt.</li></ul>', NULL, '1717230707_gamamtoi.png', '2025-04-05 05:45:44');
 
 -- --------------------------------------------------------
 
@@ -355,12 +357,13 @@ CREATE TABLE IF NOT EXISTS `staff` (
 
 DROP TABLE IF EXISTS `tintuc`;
 CREATE TABLE IF NOT EXISTS `tintuc` (
-  `tintuc_id` int UNSIGNED NOT NULL,
+  `tintuc_id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `summary` mediumtext COLLATE utf8mb4_general_ci,
   `img_title` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `description` longtext COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `description` longtext COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`tintuc_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tintuc`
@@ -370,7 +373,7 @@ INSERT INTO `tintuc` (`tintuc_id`, `title`, `summary`, `img_title`, `description
 (1, 'Khai Trương Cửa Hàng Mới', 'Chào mừng chi nhánh mới của Gà Rán Ngon tại Quận 1!', 'khai-truong.jpg', 'Chúng tôi rất vui mừng thông báo về sự kiện khai trương chi nhánh mới tại TP.HCM. Đến ngay để nhận ưu đãi hấp dẫn!'),
 (2, 'Combo Siêu Tiết Kiệm', 'Thưởng thức gà rán giòn rụm với giá siêu hời!', 'combo-tiet-kiem.jpg', 'Hãy trải nghiệm combo đặc biệt chỉ từ 99.000đ với phần gà rán, khoai tây chiên và nước ngọt!'),
 (3, 'Ưu Đãi Khách Hàng Thành Viên', 'Giảm ngay 20% cho thành viên thân thiết!', 'uu-dai-thanh-vien.jpg', 'Đăng ký thành viên ngay hôm nay để nhận ngay ưu đãi 20% cho mọi đơn hàng trên ứng dụng của chúng tôi.'),
-(4, 'Giao Hàng Miễn Phí', 'Nhận ngay gà rán nóng hổi mà không lo phí ship.', 'giao-hang-mien-phi.jpg', 'Từ ngày 1/4 đến 30/4, chúng tôi miễn phí vận chuyển cho tất cả các đơn hàng trên 150.000đ. Đặt hàng ngay!'),
+(4, 'Giao Hàng Miễn Phí', 'Nhận ngay gà rán nóng hổi mà không lo phí ship.', 'ANTOANBAOMAT\\view\\admin\\ql_tintuc\\uploads\\1717315889_14.png', 'Từ ngày 1/4 đến 30/4, chúng tôi miễn phí vận chuyển cho tất cả các đơn hàng trên 150.000đ. Đặt hàng ngay!'),
 (5, 'Gà Cay Hàn Quốc - Hương Vị Mới', 'Thưởng thức gà cay sốt Hàn Quốc đặc biệt!', 'ga-cay-han-quoc.jpg', 'Bạn đã thử món gà cay Hàn Quốc của chúng tôi chưa? Với công thức sốt cay chuẩn vị, đảm bảo khiến bạn mê mẩn!'),
 (6, 'Giảm 50% Khi Đặt Online', 'Đặt hàng qua web ngay để nhận ưu đãi!', 'giam-gia-50.jpg', 'Khuyến mãi lớn! Giảm ngay 50% khi đặt hàng qua website chính thức. Áp dụng cho tất cả các đơn hàng từ 200.000đ trở lên.');
 
@@ -404,7 +407,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_id`, `fullname`, `user_name`, `email`, `phone`, `address`, `password`, `verify_status`, `role`, `created_at`, `last_updated`, `reset_token`, `reset_token_expiry`, `otp`) VALUES
-(3, 'Dương Yến Nhi', 'dynnyd', 'duongyennhi270904@gmail.com', '0939883916', 'ktx khu b, đại học quốc gia', '$2y$10$BJaLfS6xGchxTbbQiqsVl.FGVbh6MWB2gbD51vaM1WkVhNGmERXNG', NULL, 1, '2025-03-26 21:26:28', '2025-04-02 20:09:06', '3813ea73ffb66c2b08c875cac7ab45776a35a9e28726b46bb378f51ee348f70a8602c2b389bcfed6911948cedd38554eadd9', '2025-03-26 22:54:34', 421330),
+(3, 'Dương Yến Nhi', 'dynnyd', 'duongyennhi270904@gmail.com', '0939883916', 'ktx khu b, đại học quốc gia', '$2y$10$BJaLfS6xGchxTbbQiqsVl.FGVbh6MWB2gbD51vaM1WkVhNGmERXNG', NULL, 1, '2025-03-26 21:26:28', '2025-04-04 09:22:12', '3813ea73ffb66c2b08c875cac7ab45776a35a9e28726b46bb378f51ee348f70a8602c2b389bcfed6911948cedd38554eadd9', '2025-03-26 22:54:34', 421330),
 (4, 'Nguyễn Văn A', 'mii', 'nhiaccphu01@gmail.com', '0939883916', NULL, '$2y$10$739tfCrL.DsB36LPgFwhves6DLWoNP5.4eJPkHwP70vjkWWIxmUlS', NULL, 0, '2025-03-26 21:34:44', '2025-03-26 21:34:44', NULL, NULL, NULL),
 (5, 'Nguyễn Văn A', 'admin', 'nhiaccphu02@gmail.com', '0939883916', NULL, '$2y$10$6Q1Q/fSjoPwqNt0T3Z58h.OLDYcnwt4mU5hb9MmpAMPVskcG3wkCS', NULL, 1, NULL, '2025-04-04 00:08:20', NULL, NULL, NULL);
 COMMIT;
