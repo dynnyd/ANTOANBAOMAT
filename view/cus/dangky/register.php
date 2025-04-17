@@ -1,7 +1,6 @@
 <?php
         // session_start();
         
-        
         $err=array();
         if(isset($_POST['dangky']) && ($_POST['dangky'])=='Đăng ký')
         {
@@ -53,7 +52,7 @@
         <div class="box-content"  >
             <img class="img" src="../view/cus/img/anhDK.png">
             <div class="form">
-                <h2 class="dangky" style="font-family: 'Lalezar'; padding-left: 25px;">ĐĂNG KÝ</h2>
+                <h2 class="dangky" style="font-family: 'Lalezar'; ">ĐĂNG KÝ</h2>
                 <form class="bang-dk"  method="Post" style="font-family: 'Lalezar';">                
                         <!-- //name -->
                     <div class="name">
@@ -88,34 +87,37 @@
                         <br><input type="text" name="phone">
                     </div>
                     
-                            <!-- pass -->
+                    <!-- pass -->
                     <div class="pass-icon">
                         <div class="pass">
-                            <label class="title" >Mật khẩu*</label>
+                            <label class="title">Mật khẩu*</label>
                             <br><input type="password" id="password" name="password">
                         </div>
-                        <span class="icon" id="nosee" style="cursor: pointer;padding:5px" onclick="showpass()" ><i class="fas fa-eye-slash" ></i></span>
+                        <span class="icon" id="nosee" style="cursor: pointer;" onclick="showpass()">
+                            <i class="fas fa-eye-slash"></i>
+                        </span>
                     </div>
                                 
                     <div class="has-error">
                         <span><?php echo (isset($err['pass']))?$err['pass'].'<br>':''?></span>
                         <span><?php echo (isset($err['countpass']))?$err['countpass']:''?></span>
                     </div>
-                            <!-- rpass -->
+                    <!-- rpass -->
                     <div class="rpass-icon">
                         <div class="rpass">
-                            <label class="title" >Nhập lại mật khẩu*</label>
-                            <br><input type="password" id="re_enter_password" name="re_enter_password">
+                            <label class="title">Nhập lại mật khẩu*</label>
+                            <br><input type="password" id="re_enter_password" name="re_enter_password" style = "width: 100%;">
                         </div>
-                        <span class="icon" id="noseeRe" style="cursor: pointer; padding:5px" onclick="showRepass()"><i class="fas fa-eye-slash" ></i></span>
+                        <span class="icon" id="noseeRe" style="cursor: pointer;" onclick="showRepass()">
+                            <i class="fas fa-eye-slash"></i>
+                        </span>
                     </div>
-
                     <div class="has-error">
                         <span><?php echo (isset($err['rpass']))?$err['rpass']:''?></span>
                     </div> 
                             
                         <!-- dangky button -->
-                    <input style="font-family: 'Lalezar'; margin-bottom: 25px;" class="dk-bt" type="submit" id="dangky" name="dangky" value="Đăng ký">
+                    <input class="dk-bt" type="submit" id="dangky" name="dangky" value="Đăng ký">
                     <?php
                         if(isset($errors))
                         {
