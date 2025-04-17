@@ -408,6 +408,15 @@ INSERT INTO `user` (`user_id`, `fullname`, `user_name`, `email`, `phone`, `addre
 (5, 'Nguyễn Văn A', 'admin', 'nhiaccphu02@gmail.com', '0939883916', NULL, '$2y$10$6Q1Q/fSjoPwqNt0T3Z58h.OLDYcnwt4mU5hb9MmpAMPVskcG3wkCS', NULL, 1, NULL, '2025-04-04 00:08:20', NULL, NULL, NULL);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- Table structure for table `feedbacks`
+
+DROP TABLE IF EXISTS `feedbacks`;
+CREATE TABLE `feedbacks` (
+  `id` int(11) NOT NULL,
+  `customer_name` varchar(255) DEFAULT NULL,
+  `phone_number` varchar(20) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `feedback_message` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

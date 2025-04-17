@@ -1,42 +1,42 @@
 <link rel="stylesheet" href="../view/cus/tintuc/tintuc.css">
 <?php
-include "../model/connect.php";
-$conn = connectdb();
+  include "../model/connect.php";
+  $conn = connectdb();
 
-if (!$conn) {
-    die("Lỗi kết nối MySQL: " . mysqli_connect_error());
-}
+  if (!$conn) {
+      die("Lỗi kết nối MySQL: " . mysqli_connect_error());
+  }
 
-$sql_trang = "SELECT * FROM tintuc";
-$query_trang = mysqli_query($conn, $sql_trang);
+  $sql_trang = "SELECT * FROM tintuc";
+  $query_trang = mysqli_query($conn, $sql_trang);
 
-if (!$query_trang) {
-    die("Lỗi truy vấn SQL: " . mysqli_error($conn));
-}
+  if (!$query_trang) {
+      die("Lỗi truy vấn SQL: " . mysqli_error($conn));
+  }
 
-$row_count = mysqli_num_rows($query_trang);
-$trang = ceil($row_count / 4);
+  $row_count = mysqli_num_rows($query_trang);
+  $trang = ceil($row_count / 4);
 
-$page = isset($_GET['trang']) ? (int)$_GET['trang'] : 1;
-$page = max($page, 1); 
+  $page = isset($_GET['trang']) ? (int)$_GET['trang'] : 1;
+  $page = max($page, 1); 
 
-$begin = ($page - 1) * 4;
-$beginBenPhai = $begin + 1;
-$beginBenTrai = $begin;
+  $begin = ($page - 1) * 4;
+  $beginBenPhai = $begin + 1;
+  $beginBenTrai = $begin;
 
-$tinTucBenTrai_sql = "SELECT * FROM tintuc ORDER BY tintuc_id DESC LIMIT $beginBenTrai, 1";
-$query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
+  $tinTucBenTrai_sql = "SELECT * FROM tintuc ORDER BY tintuc_id DESC LIMIT $beginBenTrai, 1";
+  $query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
 
-if (!$query_tinTucBenTrai) {
-    die("Lỗi truy vấn tinTucBenTrai: " . mysqli_error($conn));
-}
+  if (!$query_tinTucBenTrai) {
+      die("Lỗi truy vấn tinTucBenTrai: " . mysqli_error($conn));
+  }
 
-$tinTucBenPhai_sql = "SELECT * FROM tintuc ORDER BY tintuc_id DESC LIMIT $beginBenPhai, 3";
-$query_tinTucBenPhai = mysqli_query($conn, $tinTucBenPhai_sql);
+  $tinTucBenPhai_sql = "SELECT * FROM tintuc ORDER BY tintuc_id DESC LIMIT $beginBenPhai, 3";
+  $query_tinTucBenPhai = mysqli_query($conn, $tinTucBenPhai_sql);
 
-if (!$query_tinTucBenPhai) {
-    die("Lỗi truy vấn tinTucBenPhai: " . mysqli_error($conn));
-}
+  if (!$query_tinTucBenPhai) {
+      die("Lỗi truy vấn tinTucBenPhai: " . mysqli_error($conn));
+  }
 ?>
 
 <div id="container">

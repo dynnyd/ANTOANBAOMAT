@@ -4,7 +4,6 @@
     
     if (isset($_POST["send"]) && ($_POST["send"] == "Gửi đơn hàng")) 
     {
-        // $conn = connectdb();
         $name = $_POST["cusname"];
         $tele = $_POST["tel"];
         $email = $_POST["email"];
@@ -16,7 +15,7 @@
         $food = $_POST["name_food"];
         $quantity = (int)$_POST["Last_quantity"];
         $price = $_POST["Last_price"];
-        $price = preg_replace('/\D/', '', $price); //replace character which not number
+        $price = preg_replace('/\D/', '', $price);
         $Total_price = (int)$price;
     
 
