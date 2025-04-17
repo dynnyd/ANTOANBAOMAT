@@ -57,15 +57,15 @@ $conn->close();
         <form class="bang_dn" method="post" autocomplete="off">
             <div class="ten">
                 <label class="tittle1">Tên đăng nhập</label><br>
-                <input type="text" id="user" name="user">
+                <input type="text" id="user" name="user" style="width: 100%;">
             </div>
 
             <div class="mk-icon">
                 <div class="mk">
                     <label class="tittle2">Mật khẩu</label><br>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" name="password" style="width: 100%;">
                 </div>
-                <span class="icon" id="nosee" onclick="showpass()" style="cursor: pointer; padding: 5px;">
+                <span class="icon" id="nosee" onclick="showpass()" style="cursor: pointer; ">
                     <i class="fas fa-eye-slash"></i>
                 </span>
             </div>
@@ -75,7 +75,7 @@ $conn->close();
 
         <?php if (!empty($err)) echo '<p style="color:red;">' . htmlspecialchars($err) . '</p>'; ?>
 
-        <div style="text-align: left; margin-top: 20px; margin-left: 70px;">
+        <div style="text-align: left; margin-top: 20px; margin-left: 42%;">
             <a style="color: black;font-family: 'Lalezar';" class="link-dk" href="tranghienthi.php?quanly=dangky">Đăng ký</a>
         </div>
     </div>
