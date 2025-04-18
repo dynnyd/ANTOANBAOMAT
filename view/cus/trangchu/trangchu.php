@@ -60,3 +60,4 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
             <script src="../view/LIB/bootstrap/js/bootstrap.min.js"></script>
 </div>
+</div>
