@@ -21,7 +21,6 @@ include('../controller/xuly_dichvu.php');
 
         //insert đơn hàng -  tạo đơn hàng mới
         $id_bill = taodonhang_sinhnhat($new_id,$ten,$sdt,$email,$name_sn,$gioitinh,$party_day,$diachi,$total,$ghichu,$ngaydathang);
-
         //insert vào order_item
         for($i=0; $i < sizeof($_SESSION['giohangsn']); $i++)
         {

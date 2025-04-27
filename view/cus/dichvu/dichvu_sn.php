@@ -39,7 +39,7 @@ h1
   margin-bottom: 0px;
 }
 
-.full_menu
+/* .full_menu
 {
   display: grid;
   grid-template-columns: 500px 500px 500px;
@@ -47,7 +47,7 @@ h1
   margin-block-end: 50px;
   font-size: 20px;
   
-}
+} */
 
 .full_menu img
 {
@@ -57,11 +57,11 @@ h1
   
 }
 
-.option
+/* .option
 {
     text-align: center;
-}
-
+} */
+/* 
  #datmonsinhnhat
  {
     background-color: rgba(252, 47, 19, 1);
@@ -75,14 +75,14 @@ h1
     margin-bottom: 50px;
 
  }
-   
+    */
   .button
   {
     display: flex;
     padding: 20px 0 20px 100px;
   }
 
-.text_price
+/* .text_price
 {
   font-size: 30px;
   padding-left: 50px;
@@ -93,16 +93,92 @@ h1
 {
   text-align: left;
   margin-left: 170px;
+} */
+.giohangDV-container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    margin: 20px 0; /* Thêm khoảng cách trên và dưới */
 }
-.giohangDV
-{
-  background-color: rgba(252, 47, 19, 1);
-  width: fit-content;
-  border-radius: 60px;
-  border: none;
-  padding: 18px;
-  font-size: 24px;
-  float: right;
+
+.giohangDV {
+    background-color: rgba(252, 47, 19, 1);
+    width: fit-content;
+    border-radius: 60px;
+    border: none;
+    padding: 18px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+}
+
+.giohangDV:hover {
+    background-color: rgba(200, 40, 15, 1); /* Màu nền khi hover */
+}
+.full_menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tự động điều chỉnh số cột */
+    gap: 20px; /* Khoảng cách giữa các mục */
+    justify-content: center; /* Căn giữa nội dung trong grid */
+    align-items: start; /* Căn các mục theo chiều dọc */
+    margin: 50px auto; /* Khoảng cách trên/dưới và căn giữa theo chiều ngang */
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    padding: 20px; /* Thêm khoảng cách bên trong */
+}
+
+.option {
+    background-color: #fff; /* Màu nền trắng */
+    border: 1px solid #ddd; /* Viền nhẹ */
+    border-radius: 10px; /* Bo góc */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    padding: 20px; /* Khoảng cách bên trong */
+    text-align: center; /* Căn giữa nội dung */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng hover */
+}
+
+.option:hover {
+    transform: translateY(-5px); /* Hiệu ứng nổi lên khi hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Tăng đổ bóng khi hover */
+}
+
+.option img {
+    width: 100%; /* Chiếm toàn bộ chiều rộng container */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+    border-radius: 10px; /* Bo góc cho ảnh */
+    margin-bottom: 15px; /* Khoảng cách dưới ảnh */
+}
+
+.text_info {
+    text-align: left; /* Căn trái nội dung văn bản */
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333; /* Màu chữ */
+}
+
+.text_info p {
+    margin: 5px 0; /* Khoảng cách giữa các đoạn văn */
+}
+
+.text_info .price {
+    color: rgba(253, 166, 93, 1); /* Màu chữ giá */
+    font-weight: bold;
+}
+
+#datmonsinhnhat {
+    display: block; /* Đưa nút xuống dòng */
+    margin: 15px auto; /* Căn giữa nút theo chiều ngang và thêm khoảng cách trên/dưới */
+    background-color: rgba(252, 47, 19, 1); /* Màu nền nút */
+    color: white; /* Màu chữ */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo góc */
+    padding: 10px 20px; /* Khoảng cách bên trong nút */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Con trỏ chuột */
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+}
+
+#datmonsinhnhat:hover {
+    background-color: rgba(200, 40, 15, 1); /* Màu nền khi hover */
 }
 
 </style>
@@ -131,45 +207,43 @@ h1
             <h1>ĐẶT MÓN ĂN</h1>
             <div class="food_order" style = "font-family: 'Lalezar'">
 
-            <div style = "margin-top: -20px; margin-right: 50px;margin-bottom: 100px;">
-              <button class = "giohangDV" onclick="navigate()"><i class="fas fa-shopping-basket fa-lg" style="color: #ffffff;"></i></button>
+            
+              <div class="giohangDV-container">
+                  <button class="giohangDV" onclick="navigate()">
+                      <i class="fas fa-shopping-basket fa-lg" style="color: #ffffff;"></i>
+                  </button>
+              </div>
+              <div class="full_menu">
+                <?php
+                $sql = "SELECT food_combo, price, image FROM food_for_service WHERE ID_service = '1'";
+                $result = mysqli_query($conn, $sql);
+
+                if (!$result) {
+                    die("Lỗi" . mysqli_error($conn));
+                }
+
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<div class="option">';
+                        echo '<img name="image" src="../view/admin/ql_dichvu/uploads/' . $row['image'] . '">';
+                        echo '<div class="text_info">';
+                        echo '<p>' . $row['food_combo'] . '</p>';
+                        echo '<p class="price">' . number_format($row['price'], 0, ',', '.') . 'đ</p>';
+                        echo '<form action="tranghienthi.php?quanly=giohangsn" method="post">';
+                        echo '<label for="quantity">Số lượng:</label>';
+                        echo '<input type="number" name="soluong" id="quantity" placeholder="10" min="10" step="1" title="Vui lòng nhập số lượng" required>';
+                        echo '<input type="hidden" name="tenmon" value="' . $row['food_combo'] . '">';
+                        echo '<input type="hidden" name="giamon" value="' . $row['price'] . '">';
+                        echo '<input type="hidden" name="hinhanh" value="' . $row['image'] . '">';
+                        echo '<input type="submit" id="datmonsinhnhat" name="datmonsinhnhat" value="Đặt món">';
+                        echo '</form>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                }
+                ?>
             </div>
-
-            <div class="food_label">
-                <div class="full_menu">
-                    <?php
-                        $sql = "SELECT food_combo, price,image FROM food_for_service WHERE ID_service = '1'";
-                        $result = mysqli_query($conn, $sql);
-
-                        if(!$result)
-                        {
-                            die("Lỗi". mysqli_error($conn));
-                        }
-
-                        if (mysqli_num_rows($result) > 0) {
-                            $counter = 0; // Counter to generate unique identifiers for radio buttons
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $counter++;
-                                echo '<div class="option">';
-                                echo '<img name = "image" src="../view/admin/ql_dichvu/uploads/' . $row['image'] . '">';
-                                echo '<div class="text_info">';
-                                echo '<p style = "margin-bottom: 0px">'. $row['food_combo'] .'</p>';
-                                echo 'Giá bán: <p style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
-                                echo '<form action = "tranghienthi.php?quanly=giohangsn" method = "post">';
-                                echo 'Số lượng: <input type="number" name="soluong" id = "quantity"  placeholder="10" min="10" step="1" title="Vui lòng nhập số lượng" style = "width: 60px; height: 30px; font-size:18px; margin-bottom:20px "required ><br>';
-                                echo '<input type ="hidden" name = "tenmon" value = "'.$row['food_combo'].'">';
-                                echo '<input type ="hidden" name = "giamon" value = "'.$row['price'].'">';
-                                echo '<input type ="hidden" name = "hinhanh" value = "'.$row['image'].'">';
-                                echo '</div>';
-                                echo '<input type="submit" id  = "datmonsinhnhat"name = "datmonsinhnhat" value = "Đặt món">';
-                                echo '</form>';
-                                echo '</div>';
-                            }
-                        }
-                    ?>
-                
-                </div>
-        </div>
+      
             
 
         </div>

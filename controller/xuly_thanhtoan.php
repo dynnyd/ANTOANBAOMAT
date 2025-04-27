@@ -19,7 +19,7 @@ function thanhtoandonhang() {
         // Determine if the user is logged in
         if (isset($_SESSION['id'])) {
             $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
-            $sql_cart = "SELECT * FROM cart WHERE user_id='$user_id' AND orderid IS NULL";
+            $sql_cart = "SELECT * FROM cart WHERE user_id='$user_id' AND order_id IS NULL";
             $query_cart = mysqli_query($conn, $sql_cart);
         } else {
             $user_id = "NULL";
@@ -38,10 +38,10 @@ function thanhtoandonhang() {
 
             if (isset($_SESSION['id'])) {
                 // Update the cart to associate the items with this order ID
-                $updateCartQuery = "UPDATE cart SET orderid = '$orderID' WHERE user_id='$user_id' AND orderid IS NULL";
+                $updateCartQuery = "UPDATE cart SET order_id = '$orderID' WHERE user_id='$user_id' AND order_id IS NULL";
                 mysqli_query($conn, $updateCartQuery);
 
-                $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id WHERE orderid='$orderID'";
+                $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id WHERE order_id='$orderID'";
                 $query_cart = mysqli_query($conn, $sql_cart);
                
                
@@ -56,7 +56,7 @@ function thanhtoandonhang() {
                 mysqli_query($conn, $insertOrderItemQuery);
                  // Clear the cart
          
-                 $clearCartQuery = "DELETE FROM cart WHERE orderid = '$orderID' AND user_id='$user_id'";
+                 $clearCartQuery = "DELETE FROM cart WHERE order_id = '$orderID' AND user_id='$user_id'";
                  mysqli_query($conn, $clearCartQuery);
             }
          }

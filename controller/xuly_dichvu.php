@@ -40,7 +40,7 @@ function tongdonhang()
 function taodonhang($id,$name, $phone, $email, $booking_date, $address, $total_price, $note,$order_day)
 {
     $conn = connectdb();
-    $sql = "INSERT INTO bigdeal_service(id_bill,name, phone, email, booking_date, address, total_price, note,order_day)
+    $sql = "INSERT INTO bigdeal_service(id,name, phone, email, booking_date, address, total_price, note,order_day)
                 VALUES ('$id','$name','$phone','$email','$booking_date','$address', '$total_price', '$note','$order_day')";
 
     if ($total_price != 0)
@@ -74,7 +74,7 @@ function taodonhang($id,$name, $phone, $email, $booking_date, $address, $total_p
 function taogiohang_bigdeal($tenmon,$dongia,$soluong,$thanhtien,$idbill)
 {
     $conn = connectdb();
-    $sql = "INSERT INTO service_order_item(id_bill,tenmon,soluong,dongia,thanhtien)
+    $sql = "INSERT INTO service_order_item(id,food_name,quantity,unit_price,total)
                 VALUES ('$idbill','$tenmon','$soluong','$dongia','$thanhtien')";
     echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>";
     if(mysqli_query($conn,$sql))
@@ -131,7 +131,7 @@ function tongdonhang_sinhnhat()
 function taodonhang_sinhnhat($id,$name, $phone, $email, $order_name,$gender,$booking_date, $address, $total_price, $note,$order_day)
 {
     $conn = connectdb();
-    $sql = "INSERT INTO birthday_service(id_bill,name, phone, email,order_name, gender , booking_date, address, total_price, note,order_day)
+    $sql = "INSERT INTO birthday_service(id,customer_name, phone, email,name_order_party, gender , booking_date, address, total_price, note,order_day)
                 VALUES ('$id','$name','$phone','$email','$order_name','$gender','$booking_date','$address', '$total_price', '$note','$order_day')";
     if ($total_price != 0)
     {
@@ -164,7 +164,7 @@ function taodonhang_sinhnhat($id,$name, $phone, $email, $order_name,$gender,$boo
 function taogiohang_sinhnhat($tenmon,$dongia,$soluong,$thanhtien,$idbill)
 {
     $conn = connectdb();
-    $sql = "INSERT INTO service_order_item(id_bill,tenmon,soluong,dongia,thanhtien)
+    $sql = "INSERT INTO service_order_item(id,food_name,quantity,unit_price,total)
                 VALUES ('$idbill','$tenmon','$soluong','$dongia','$thanhtien')";
     echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>";
     if(mysqli_query($conn,$sql))
