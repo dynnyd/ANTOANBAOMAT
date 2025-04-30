@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (!isset($_SESSION['id'])) {
+    if (!isset($_GET['id'])) {
         echo "<script>
                 Swal.fire({
                     icon: 'error',
@@ -23,27 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    $id = $_SESSION['id'];
-    $old_password = $_POST['old_password'];
+    $id = $_GET['id'];
     $new_password = $_POST['new_password'];
     $confirm_password = $_POST['confirm_password'];
 
     date_default_timezone_set('Asia/Ho_Chi_Minh'); 
     $now = date('Y-m-d H:i:s');
-
-    // Fetch the old password from the database
-    $stmt = $conn->prepare("SELECT password FROM user WHERE user_id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $stmt->bind_result($db_password);
-    $stmt->fetch();
-    $stmt->close();
-
-    
-    // Validate old password
-    if (!password_verify($old_password, $db_password)) {
-        $error = "Mật khẩu cũ chưa đúng.";
-    }elseif(strlen($new_password)<6){
+    if(strlen($new_password)<6){
         $error="Mật khẩu tối thiểu 6 ký tự.";
     } 
     elseif ($new_password !== $confirm_password) {
@@ -91,13 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h2>ĐỔI MẬT KHẨU</h2>
     <div class="form">
         <form method="POST">
-            <div>
-                <label for="old_password">Mật khẩu cũ:</label>
-                <div class="input-icon">
-                    <input type="password" id="old_password" name="old_password" >
-                    <span id="old_nosee" style="cursor: pointer;" onclick="showOldpass()"><i class="fas fa-eye-slash icon"></i></span>
-                </div>
-            </div>
             <div>
                 <label for="password">Mật khẩu mới:</label>
                 <div class="input-icon">
