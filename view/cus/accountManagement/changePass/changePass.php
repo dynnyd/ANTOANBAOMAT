@@ -95,8 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="form">
         <form method="POST">
             <div>
-<<<<<<< HEAD
-=======
                 <label for="old_password">Mật khẩu cũ:</label>
                 <div class="input-icon">
                     <input type="password" id="old_password" name="old_password" >
@@ -104,7 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
             <div>
->>>>>>> 1481aca0a9981e0ce3d14ce0ca3ea27f632c6237
                 <label for="password">Mật khẩu mới:</label>
                 <div class="input-icon">
                     <input type="password" id="password" name="new_password" >
