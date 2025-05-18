@@ -12,7 +12,8 @@ if ($conn->connect_error) {
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (!isset($_GET['id'])) {
+    // if (!isset($_GET['id'])) {
+    if (!isset($_SESSION['id'])) {
         echo "<script>
                 Swal.fire({
                     icon: 'error',
@@ -23,13 +24,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    $id = $_GET['id'];
+    // $id = $_GET['id'];
+    // Không được để id = get id mình gửi lên $id = $_GET['id'];
+    $id = $_SESSION['id'];
+    $old_password = $_POST['old_password'];
     $new_password = $_POST['new_password'];
     $confirm_password = $_POST['confirm_password'];
 
     date_default_timezone_set('Asia/Ho_Chi_Minh'); 
     $now = date('Y-m-d H:i:s');
+<<<<<<< HEAD
     if(strlen($new_password)<6){
+=======
+
+    // Fetch the old password from the database
+    $stmt = $conn->prepare("SELECT password FROM user WHERE user_id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->bind_result($db_password);
+    $stmt->fetch();
+    $stmt->close();
+
+    
+    // Validate old password
+    if (!password_verify($old_password, $db_password)) {
+        $error = "Mật khẩu cũ chưa đúng.";
+    }elseif(strlen($new_password)<6){
+>>>>>>> 1481aca0a9981e0ce3d14ce0ca3ea27f632c6237
         $error="Mật khẩu tối thiểu 6 ký tự.";
     } 
     elseif ($new_password !== $confirm_password) {
@@ -78,6 +99,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="form">
         <form method="POST">
             <div>
+<<<<<<< HEAD
+=======
+                <label for="old_password">Mật khẩu cũ:</label>
+                <div class="input-icon">
+                    <input type="password" id="old_password" name="old_password" >
+                    <span id="old_nosee" style="cursor: pointer;" onclick="showOldpass()"><i class="fas fa-eye-slash icon"></i></span>
+                </div>
+            </div>
+            <div>
+>>>>>>> 1481aca0a9981e0ce3d14ce0ca3ea27f632c6237
                 <label for="password">Mật khẩu mới:</label>
                 <div class="input-icon">
                     <input type="password" id="password" name="new_password" >

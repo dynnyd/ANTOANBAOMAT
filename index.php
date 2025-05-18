@@ -1,3 +1,3 @@
 <?php
-   header('Location:GourMez-Web/controller/tranghienthi.php');
+   header('Location:controller/tranghienthi.php');
 ?>
