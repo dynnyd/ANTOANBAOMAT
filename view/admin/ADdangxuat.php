@@ -12,13 +12,9 @@ if (isset($_SESSION['role'])) {
     }
 
     // Redirect to another page
-<<<<<<< HEAD
-    header('Location: ../../controller/tranghienthi.php');
-=======
     // Xóa cookie 'role' để đảm bảo hệ thống không còn coi người dùng là admin
     //setcookie('role', '', time() - 3600, "/"); // Đặt thời gian hết hạn trong quá khứ để xóa cookie     
     header('Location: ../../controller/tranghienthi.php?quanly=dangnhap');
->>>>>>> 1481aca0a9981e0ce3d14ce0ca3ea27f632c6237
     exit(); // Ensure no further code is executed after redirection
 }
 
