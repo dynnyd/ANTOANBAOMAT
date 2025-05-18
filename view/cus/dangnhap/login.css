@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: 'Lalezar';
+    color: black;
+}
+
+.box-content {
+    width: 65%;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Lalezar';
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form {
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    font-family: 'Lalezar';
+}
+
+.dangnhap {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.ten, .mk {
+    /* margin-bottom: 20px; */
+    width: 100%;
+    font-family: 'Lalezar';
+}
+
+.ten input, .mk input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Lalezar';
+}
+
+.mk-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.mk-icon .icon {
+    position: absolute;
+    right: -30px; /* Đẩy icon ra ngoài một chút */
+    top: 75%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+}
+
+.icon i {
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+}
+
+.dn-bt {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    font-family: 'Lalezar';
+}
+
+.dn-bt:hover {
+    background-color: #333;
+}
+
+.link-dk {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+
+.link-dk:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .box-content {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+
+    .img {
+        height: 200px;
+    }
+
+    .form {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,107 @@
+.header{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 80px;
+    background-color: #252525;
+    z-index: 1; 
+    
+}
+
+
+.menu_header{
+    display: flex;
+    font-family: 'Lalezar';
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 90%; 
+    margin:  20px auto;
+}
+
+.menu_header a{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+    /* margin-bottom: 30px; */
+    color: white;
+    
+}
+.menu_header a{
+    justify-content: space-between;
+    font-family: 'Lalezar';
+}
+.menu_header  a:hover{
+    color:rgb(245, 214, 175);
+}
+
+/* menu user */
+#name_user{
+    color: white;
+    margin-right: 20px;
+    font-family: 'Lalezar';
+    height: 80px;
+    border:0;
+    background-color: #252525;
+    right: 0;
+    font-size: 18px;
+}
+
+/* Dropdown */
+.user_dropdown{
+    position: relative;
+    display: inline-block;
+    
+}
+.dropdown_content{
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 15vw;
+    right: 0;
+    /* z-index: 1000;xác định thứ tự lớp của menu, lớp càng lớn sẽ hiện trc */
+}
+.dropdown_content a{
+    text-align: left;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.user_dropdown:hover .dropdown_content{
+    display: block;
+}
+
+.dropdown_content a:hover{
+    background-color: #252525;
+    color: rgb(255, 255, 255);
+    
+    /* z-index: 1000; */
+    text-align: left;
+    display: block;
+}
+
+
+/* Nút đăng nhập */
+.user_dropdown .bt_dangnhap{
+    color: #252525;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+}
+.user_dropdown .bt_dangnhap:hover{
+    color: white;
+    background-color: #252525;
+    text-align: left;
+    align-items: center;
+}

@@ -1,0 +1,77 @@
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    }   
+
+    .contact-details, .feedback-form {
+        width: 45%;
+        margin-right: 30px;
+    }
+
+    .feedback-form {
+        background-color: #fff8ed;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        font-family: 'Lalezar', sans-serif;
+    }
+
+    .feedback-form h2 {
+        text-align: center;
+        color: #E7B037;
+        margin-bottom: 10px;
+    }
+
+    .feedback-form .sub-title {
+        text-align: center;
+        font-size: 16px;
+        color: #888;
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        margin-right: 25px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: none;
+        background-color: #F5EAD7;
+        font-size: 16px;
+        font-family: 'Lalezar', sans-serif;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    input[type="file"] {
+        font-family: 'Lalezar', sans-serif;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .btn_gui {
+        border: none;
+        background-color: #E7B037;;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        width: 100px;
+        height: 40px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: 'Lalezar', sans-serif;
+    }
+
+    .btn_gui:hover {
+        background-color: #ffb84d;
+    }

@@ -1,0 +1,97 @@
+.box-content {
+    margin: 0 auto;
+    width: 90%;
+    background-color: white;
+    margin-top: 140px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 100% 0;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+        "h f";
+}
+.img {
+    width: 100%;
+    height: 100%;
+    grid-area: h;
+}
+.form {
+    width: 70%;
+    margin: 2% 15% auto;
+    align-items: center;
+    justify-content: center;
+    grid-area: f;
+    
+}
+.bang_dk{
+    display: block;
+    align-items: center;
+    justify-content: end;
+    margin-top: 5%;
+}
+.dangky{
+    display: flex;
+    margin-left: 40%;
+    margin-bottom: 5%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.name,.user,.phone,.email,.pass,.rpass{
+    margin-bottom: 2%;
+    width: 100%;
+}
+.name input, .user input, .phone input, .email input, .pass input, .rpass input {
+    width: 100%; /* Đảm bảo tất cả input chiếm toàn bộ chiều rộng */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Lalezar';
+}
+.pass-icon,.rpass-icon{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.pass-icon .icon, .rpass-icon .icon {
+    position: absolute;
+    right: -30px; /* Đẩy icon ra ngoài một chút */
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+}
+/* 
+.icon i {
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+} */
+.title{
+    color: black;
+    font-size: 18px;
+}
+
+.dk-bt{
+    background-color: black;
+    color: white;
+    padding: 10px; /* Thêm padding để giống nút đăng nhập */
+    width: 100%; /* Đảm bảo nút chiếm toàn bộ chiều rộng */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+    margin: 20px 0px;
+    font-family: 'Lalezar';
+}
+.dk-bt:hover {
+    background-color: #333; /* Màu khi hover */
+}
+.has-error{
+    color: red;
+}
