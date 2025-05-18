@@ -12,6 +12,7 @@ if ($conn->connect_error) {
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // if (!isset($_GET['id'])) {
     if (!isset($_SESSION['id'])) {
         echo "<script>
                 Swal.fire({
@@ -23,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
+    // $id = $_GET['id'];
+    // Không được để id = get id mình gửi lên $id = $_GET['id'];
     $id = $_SESSION['id'];
     $old_password = $_POST['old_password'];
     $new_password = $_POST['new_password'];

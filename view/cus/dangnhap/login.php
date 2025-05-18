@@ -31,6 +31,8 @@ if (isset($_POST['dangnhap']) && $_POST['dangnhap'] == 'Đăng nhập') {
                 $_SESSION['id'] = $id;
                 $_SESSION['user'] = $user_name;
                 $_SESSION['role'] = $role;
+                // Không được set cookie cho tham số role
+                //setcookie('role', $_SESSION['role'], time() + (86400 * 30), "/"); // Cookie lasts 30 days
                 include('login_uname.php');
                 // exit();
             } else {

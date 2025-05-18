@@ -2,6 +2,8 @@
     // session_start();
     include('../view/cus/accountManagement/lay_tttk.php');
 
+    // $id=$_GET['id'];
+    // Không được cho id = get id mình gửi lên $id = $_GET['id'];
     $id=$_SESSION['id'];
 
     $array=get_info($id);
